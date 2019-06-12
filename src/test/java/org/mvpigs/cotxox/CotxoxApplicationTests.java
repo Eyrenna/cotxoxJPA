@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mvpigs.cotxox.domain.Carrera;
 import org.mvpigs.cotxox.domain.Conductor;
+import org.mvpigs.cotxox.repo.CarreraRepo;
+import org.mvpigs.cotxox.service.CarreraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.Repository;
@@ -39,11 +41,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class CotxoxApplicationTests {
 
-//	@Autowired(required=false)
-//	CarreraRepo carreraRepo;
+	@Autowired(required=false)
+	CarreraRepo carreraRepo;
 
-//	@Autowired(required=false)
-//	CarreraService carreraService;
+	@Autowired(required=false)
+	CarreraService carreraService;
 
 //	@Autowired(required=false)
 //	ConductorRepo conductorRepo;
@@ -88,21 +90,21 @@ public class CotxoxApplicationTests {
 	 * Crea una classe CarreraRepo que sigui un repositori 
 	 * Spring Data per l'entitat Carrera
 	 */
-//	@Test
-//	public void test_RepoCarerra_es_repositori() { 
-//		Assert.assertNotNull(carreraRepo);
-//		Assert.assertTrue(carreraRepo instanceof Repository);
-//	}	
-//
-//	/**
-//	 * Crea una classe CarreraService que sigui un component 
-//	 * amb el rol de Service
-//	 */
-//	@Test
-//	public void test_carreraService_es_component() {
-//		Assert.assertNotNull(carreraService);
-//	}
-//
+	@Test
+	public void test_RepoCarerra_es_repositori() { 
+		Assert.assertNotNull(carreraRepo);
+		Assert.assertTrue(carreraRepo instanceof Repository);
+	}	
+
+	/**
+	 * Crea una classe CarreraService que sigui un component 
+	 * amb el rol de Service
+	 */
+	@Test
+	public void test_carreraService_es_component() {
+		Assert.assertNotNull(carreraService);
+	}
+
 //	/**
 //	 * Utilitza els mètodes del repositori de carrera
 //	 * i del servei carrera per a fer persistent una carrera 
