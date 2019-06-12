@@ -4,15 +4,38 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="t_conductores")
 public class Conductor {
 
+	@Id
+	@Column(name="co_tarjeta_credito")
 	private String tarjeta;
+	
+	@Column(name="co_nombre")
 	private String nombre = null;
+	
+	@Column(name="co_modelo")
 	private String modelo = null;
+	
+	@Column(name="co_matricula")
 	private String matricula = null;
+	
+	@Column(name="co_valoracion_media")
 	private double valoracionMedia = 0d;
+	
+	@Column(name="co_ocupado")
 	private boolean ocupado = false;
+	
+	@Transient
 	private ArrayList<Byte> valoraciones = new ArrayList<>();
+	@Transient
 	private Set<Carrera> carreras = new HashSet<>();
 
 	/**
